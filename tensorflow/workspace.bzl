@@ -475,12 +475,14 @@ def tf_repositories(path_prefix = "", tf_repo_name = ""):
     tf_http_archive(
         name = "com_google_protobuf",
         patch_file = clean_dep("//third_party/protobuf:protobuf.patch"),
+        sha256 = "c90d9e13564c0af85fd2912545ee47b57deded6e5a97de80395b6d2d9be64854",
         strip_prefix = "protobuf-3.9.1",
         system_build_file = clean_dep("//third_party/systemlibs:protobuf.BUILD"),
         system_link_files = {
             "//third_party/systemlibs:protobuf.bzl": "protobuf.bzl",
         },
         urls = [
+            "https://storage.googleapis.com/mirror.tensorflow.org/github.com/protocolbuffers/protobuf/archive/v3.9.1.zip",
             "https://github.com/protocolbuffers/protobuf/archive/v3.9.1.zip",
         ],
     )
